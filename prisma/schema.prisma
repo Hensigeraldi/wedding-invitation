@@ -1,0 +1,37 @@
+// Prisma Schema -- Wedding RSVP
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+/// Tabel konfirmasi kehadiran tamu undangan
+model RSVP {
+  id         String   @id @default(cuid())
+  name       String
+  /// yes = hadir, no = tidak hadir
+  attendance String
+  guests     Int      @default(1)
+  message    String?
+  createdAt  DateTime @default(now())
+  replies    Reply[]
+
+  @@index([createdAt])
+  @@map("rsvps")
+}
+
+model Reply {
+  id        String   @id @default(cuid())
+  name      String
+  message   String
+  rsvpId    String
+  rsvp      RSVP     @relation(fields: [rsvpId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([rsvpId])
+  @@map("replies")
+}
