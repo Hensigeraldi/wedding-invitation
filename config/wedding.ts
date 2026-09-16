@@ -82,8 +82,8 @@ export const weddingConfig = {
   ] satisfies GalleryItem[],
 
   music: {
-    src: "/audio/haley-reinhart.mp3",
-    title: "Can't Help Falling In Love - Haley Reinhart",
+    src: "/audio/the-way-you-look-at-me.mp3",
+    title: "The Way You Look At Me - Nyoman Paul & Andi Rianto",
   },
 
   hashtag: "#AdrianClaraForever",
