@@ -48,7 +48,7 @@ export const weddingConfig = {
     title: "Resepsi",
     date: "10 Oktober 2026",
     time: "15:00 WITA",
-    venueName: "Jaga III, Desa Tempang 3 Kecamatan Langowan Utara",
+    venueName: "Kel. Irot Pai, Robby, Jaga III, Desa Tempang 3 , Kecamatan Langowan Utara",
     mapsUrl: "https://maps.app.goo.gl/vinR8sW3dtyeaxth8",
   },
 
@@ -61,10 +61,10 @@ export const weddingConfig = {
       image: "/images/story/tian.png",
     },
     {
-      year: "Mrs. Dela",
+      year: "Ms. Dela",
       title: "The Bride",
       description:
-        "Di hadapan Tuhan, aku menerima tanganmu dan memilihmu sebagai teman dalam perjalanan hidupku. Aku berjanji untuk tetap mengasihi, mendampingi, dan bertumbuh bersamamu, sebab kasih yang berasal dari Tuhan tidak berkesudahan",
+        "Di hadapan Tuhan, aku menerima tanganmu dan memilihmu sebagai teman dalam perjalanan hidupku. Aku berjanji untuk tetap mengasihi, mendampingi, dan bertumbuh bersamamu, sebab kasih yang berasal dari Tuhan tidak berkesudahan.",
       image: "/images/story/dela.png",
     },
   ] satisfies StoryItem[],
