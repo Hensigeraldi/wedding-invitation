@@ -79,14 +79,14 @@ export default function Gallery() {
             onClick={close}
           >
             <button
-              className="absolute top-6 right-6 text-ivory/80 hover:text-gold"
+              className="absolute top-6 right-6 text-ivory/80 hover:text-gold z-50"
               onClick={close}
               aria-label="Close"
             >
               <X size={26} />
             </button>
             <button
-              className="absolute left-4 md:left-10 text-ivory/80 hover:text-gold"
+              className="absolute left-4 md:left-10 text-ivory/80 hover:text-gold z-50"
               onClick={(e) => {
                 e.stopPropagation();
                 prev();
@@ -96,7 +96,7 @@ export default function Gallery() {
               <ChevronLeft size={30} />
             </button>
             <button
-              className="absolute right-4 md:right-10 text-ivory/80 hover:text-gold"
+              className="absolute right-4 md:right-10 text-ivory/80 hover:text-gold z-50"
               onClick={(e) => {
                 e.stopPropagation();
                 next();

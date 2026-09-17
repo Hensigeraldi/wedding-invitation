@@ -71,7 +71,7 @@ export const weddingConfig = {
 
   gallery: [
     { image: "/images/gallery/2.jpeg", span: "tall" },
-    { image: "/images/gallery/7.png", span: "tall" },
+    { image: "/images/gallery/7.jpeg", span: "tall" },
     { image: "/images/gallery/3.jpeg", span: "wide" },
     { image: "/images/gallery/4.jpeg", span: "tall" },
     { image: "/images/gallery/5.jpeg", span: "tall" },
