@@ -3,8 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MailOpen } from "lucide-react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function SplashCover({ onOpen }: { onOpen: () => void }) {
+function SplashCoverContent({ onOpen }: { onOpen: () => void }) {
+  const searchParams = useSearchParams();
+  const guestName = searchParams.get("to") || searchParams.get("yth") || "Tamu Undangan";
   return (
     <motion.div
       initial={{ opacity: 1 }}
@@ -62,7 +66,7 @@ export default function SplashCover({ onOpen }: { onOpen: () => void }) {
             className="mb-3 text-center"
           >
             <p className="text-ivory/80 text-xs md:text-sm mb-1">Kepada Yth :</p>
-            <p className="text-gold font-semibold text-base md:text-lg drop-shadow-sm">Tamu Undangan</p>
+            <p className="text-gold font-semibold text-base md:text-lg drop-shadow-sm">{guestName}</p>
           </motion.div>
 
           {/* Cover Undangan Icon */}
@@ -102,5 +106,13 @@ export default function SplashCover({ onOpen }: { onOpen: () => void }) {
 
       </div>
     </motion.div>
+  );
+}
+
+export default function SplashCover({ onOpen }: { onOpen: () => void }) {
+  return (
+    <Suspense fallback={null}>
+      <SplashCoverContent onOpen={onOpen} />
+    </Suspense>
   );
 }
