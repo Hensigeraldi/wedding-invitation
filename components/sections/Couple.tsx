@@ -53,7 +53,7 @@ function PersonBlock({
           {name}
         </h3>
         <div className="gold-divider w-16 mx-auto md:mx-0 mb-5" />
-        <p className="text-sm text-champagne/90 mb-2">{parents}</p>
+        <p className="text-xs text-champagne/90 mb-2">{parents}</p>
       </Reveal>
     </div>
   );

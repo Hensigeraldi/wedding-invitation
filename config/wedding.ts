@@ -21,13 +21,13 @@ export const weddingConfig = {
   groom: {
     fullName: "Apt. Christian Rondonuwu, S.Farm",
     displayName: "Tian",
-    parents: "Putra dari keluarga Rondonuwu - Sandag",
+    parents: "Putra kedua dari keluarga Rondonuwu - Sandag",
     photo: "/images/couple/groom.png",
   },
   bride: {
-    fullName: "Rodela Agnesia Irot, S.KM, M.Kes",
+    fullName: "Rodela Agnesia Irot, SKM., M.Kes",
     displayName: "Dela",
-    parents: "Putri dari keluarga Irot - Pai",
+    parents: "Putri pertama dari keluarga Irot - Pai",
     photo: "/images/couple/bride.png",
   },
 
@@ -41,15 +41,27 @@ export const weddingConfig = {
     title: "Pemberkatan",
     date: "10 Oktober 2026",
     time: "11:00 WITA",
-    venueName: "GMIM Nafiri Tempang Langowan Utara",
+    venueName: "GMIM Nafiri Tempang\nLangowan Utara",
     mapsUrl: "https://maps.app.goo.gl/rvYQi9wz2auuDXyMA",
   },
   reception: {
     title: "Resepsi",
     date: "10 Oktober 2026",
     time: "15:00 WITA",
-    venueName: "Kel. Irot Pai, Robby, Jaga III, Desa Tempang 3 , Kecamatan Langowan Utara",
+    venueName: "Kel. Irot - Pai Robby,\nJaga III, Desa Tempang 3 , Kecamatan Langowan Utara",
     mapsUrl: "https://maps.app.goo.gl/vinR8sW3dtyeaxth8",
+  },
+
+  turutMengundang: {
+    left: [
+      "Carey Wesley Irot, A.Md.Tra., ANT III",
+    ],
+    right: [
+      "Kel. Rondonuwu Lossu\n(dr. Hermanus & drg. Fara)",
+      "Kel. Lintong Rondonuwu\n(Jhendry & Fiany)",
+      "Ega Crismania Gracia Rondonuwu",
+      "Kel. Rondonuwu Manoppo"
+    ]
   },
 
   story: [
@@ -70,15 +82,15 @@ export const weddingConfig = {
   ] satisfies StoryItem[],
 
   gallery: [
-    { image: "/images/gallery/2.jpeg", span: "tall" },
-    { image: "/images/gallery/7.jpeg", span: "tall" },
-    { image: "/images/gallery/3.jpeg", span: "wide" },
-    { image: "/images/gallery/4.jpeg", span: "tall" },
-    { image: "/images/gallery/5.jpeg", span: "tall" },
-    { image: "/images/gallery/6.jpeg", span: "tall" },
-    { image: "/images/gallery/1.jpeg", span: "tall" },
-    { image: "/images/gallery/8.jpeg", span: "tall" },
-    { image: "/images/gallery/9.jpeg", span: "tall" },
+    { image: "/images/gallery/2-new.jpeg", span: "tall" },
+    { image: "/images/gallery/7-new.jpeg", span: "tall" },
+    { image: "/images/gallery/3-new.jpeg", span: "wide" },
+    { image: "/images/gallery/4-new.jpeg", span: "tall" },
+    { image: "/images/gallery/5-new.jpeg", span: "tall" },
+    { image: "/images/gallery/6-new.jpeg", span: "tall" },
+    { image: "/images/gallery/1-new.jpeg", span: "tall" },
+    { image: "/images/gallery/8-new.jpeg", span: "tall" },
+    { image: "/images/gallery/9-new.jpeg", span: "tall" },
   ] satisfies GalleryItem[],
 
   music: {

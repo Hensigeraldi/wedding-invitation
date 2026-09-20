@@ -11,6 +11,8 @@ import Couple from "@/components/sections/Couple";
 import Gallery from "@/components/sections/Gallery";
 import Event from "@/components/sections/Event";
 import Countdown from "@/components/sections/Countdown";
+import Families from "@/components/sections/Families";
+import TurutMengundang from "@/components/sections/TurutMengundang";
 import Gift from "@/components/sections/Gift";
 import RSVP from "@/components/sections/RSVP";
 import Footer from "@/components/sections/Footer";
@@ -70,6 +72,8 @@ export default function Home() {
             <Event />
             <Gallery />
             <Countdown />
+            <Families />
+            <TurutMengundang />
             <Gift />
             <RSVP />
           </>

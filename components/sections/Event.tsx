@@ -35,7 +35,7 @@ function EventCard({
         </div>
         <div className="flex items-start justify-center gap-2 text-ivory/70 text-sm mb-8">
           <MapPin size={14} className="mt-0.5 shrink-0" />
-          <span>{venueName}</span>
+          <span className="whitespace-pre-line">{venueName}</span>
         </div>
 
         <a

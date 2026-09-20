@@ -12,7 +12,10 @@ export default function Story() {
       id="story"
       className="relative bg-[linear-gradient(180deg,#f7f1e3_0%,#ecd9a8_45%,#f7f1e3_100%)] py-28 md:py-36 overflow-hidden"
     >
-      <div className="relative max-w-5xl mx-auto px-6">
+      {/* Gradient transition from previous dark section */}
+      <div className="absolute top-0 left-0 w-full h-32 md:h-48 bg-gradient-to-b from-[#0e0407] to-transparent z-0 pointer-events-none" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
         <Reveal className="text-center mb-20">
           <h2 className="font-heading-alt italic text-4xl md:text-6xl text-burgundy-black">
             The Groom & The Bride

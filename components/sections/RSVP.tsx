@@ -10,19 +10,11 @@ import { submitRSVP, type RSVPFormData } from "@/lib/rsvp";
 const inputClasses =
   "w-full bg-transparent border-0 border-b border-wine/20 focus:border-gold-deep outline-none py-3 text-burgundy-black placeholder:text-deep-burgundy/40 text-sm transition-colors duration-300";
 
-type Reply = {
-  id: string;
-  name: string;
-  message: string;
-  createdAt: string;
-};
-
 type Message = {
   id: string;
   name: string;
   message: string;
   createdAt: string;
-  replies?: Reply[];
 };
 
 export default function RSVP() {
@@ -67,34 +59,7 @@ export default function RSVP() {
     fetchMessages();
   }, []);
 
-  async function handleReplySubmit(e: FormEvent<HTMLFormElement>, rsvpId: string) {
-    e.preventDefault();
-    setReplyStatus("submitting");
 
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      message: String(formData.get("message") ?? ""),
-    };
-
-    try {
-      const res = await fetch(`/api/rsvp/${rsvpId}/reply`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Failed to reply");
-
-      setReplyStatus("success");
-      fetchMessages(); // refresh the messages
-      setTimeout(() => {
-        setReplyingTo(null);
-        setReplyStatus("idle");
-      }, 1000);
-    } catch {
-      setReplyStatus("error");
-    }
-  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -257,50 +222,10 @@ export default function RSVP() {
                               year: "numeric",
                             })}
                           </p>
-                          <button 
-                            onClick={() => { setReplyingTo(replyingTo === msg.id ? null : msg.id); setReplyStatus("idle"); }}
-                            className="text-[10px] text-wine uppercase tracking-wider font-semibold hover:underline"
-                          >
-                            Balas
-                          </button>
                         </div>
                       </motion.div>
 
-                      {/* Reply Form */}
-                      <AnimatePresence>
-                        {replyingTo === msg.id && (
-                          <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="ml-3 md:ml-8 overflow-hidden"
-                        >
-                          <form onSubmit={(e) => handleReplySubmit(e, msg.id)} className="flex gap-2 items-center mt-1">
-                            <input required name="message" type="text" placeholder="Tambahkan balasan..." className="flex-1 min-w-0 bg-transparent border-0 border-b border-wine/30 focus:border-wine outline-none py-1.5 text-burgundy-black placeholder:text-deep-burgundy/50 text-xs transition-colors" />
-                            <button type="submit" disabled={replyStatus === "submitting"} className="text-[10px] font-semibold text-wine uppercase tracking-wider hover:text-gold-deep disabled:opacity-50 px-2 shrink-0">
-                                {replyStatus === "submitting" ? "..." : replyStatus === "success" ? "Terkirim" : "Kirim"}
-                              </button>
-                            </form>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
 
-                      {/* Replies List */}
-                    {msg.replies && msg.replies.length > 0 && (
-                      <div className="flex flex-col gap-3 ml-3 md:ml-8 mt-1 border-l-2 border-wine/10 pl-3 md:pl-4 py-1 break-words">
-                        {msg.replies.map(reply => (
-                          <div key={reply.id} className="py-1">
-                            <p className="font-medium text-xs text-wine mb-0.5">{reply.name}</p>
-                            <p className="text-xs text-deep-burgundy/80 whitespace-pre-wrap">{reply.message}</p>
-                              <p className="text-[9px] text-wine/40 mt-1 uppercase">
-                                {new Date(reply.createdAt).toLocaleDateString("id-ID", {
-                                  day: "numeric", month: "long", year: "numeric",
-                                })}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                      )}
                     </div>
                   ))}
                 </div>
