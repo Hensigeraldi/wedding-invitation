@@ -23,6 +23,17 @@ export default function Home() {
   const [introFinished, setIntroFinished] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [showGift, setShowGift] = useState(true);
+
+  useEffect(() => {
+    // Membaca parameter URL saat komponen dimuat
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('gift') === 'false') {
+        setShowGift(false); // Sembunyikan jika gift=false
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const a = new Audio(weddingConfig.music.src);
@@ -74,7 +85,7 @@ export default function Home() {
             <Countdown />
             <Families />
             <TurutMengundang />
-            <Gift />
+            {showGift && <Gift />}
             <RSVP />
           </>
         )}
