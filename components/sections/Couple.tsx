@@ -53,13 +53,20 @@ function PersonBlock({
           {name}
         </h3>
         <div className="gold-divider w-16 mx-auto md:mx-0 mb-5" />
-        <p className="text-xs text-champagne/90 mb-2">{parents}</p>
+        <p className="text-xs text-champagne/90 mb-2 whitespace-pre-line">{parents}</p>
       </Reveal>
     </div>
   );
 }
 
-export default function Couple() {
+export default function Couple({ useAlternateParents = false }: { useAlternateParents?: boolean }) {
+  const groomParents = useAlternateParents
+    ? weddingConfig.groom.parentsAlternate
+    : weddingConfig.groom.parents;
+  const brideParents = useAlternateParents
+    ? weddingConfig.bride.parentsAlternate
+    : weddingConfig.bride.parents;
+
   return (
     <section id="couple" className="relative py-28 md:py-36 overflow-hidden bg-wine"
       style={{ background: "linear-gradient(180deg, #0e0407 0%, #2a070d 25%, #4a0e18 50%, #2a070d 75%, #0e0407 100%)" }}
@@ -77,14 +84,14 @@ export default function Couple() {
           <PersonBlock
             label="The Groom"
             name={weddingConfig.groom.fullName}
-            parents={weddingConfig.groom.parents}
+            parents={groomParents}
             photo={weddingConfig.groom.photo}
             align="left"
           />
           <PersonBlock
             label="The Bride"
             name={weddingConfig.bride.fullName}
-            parents={weddingConfig.bride.parents}
+            parents={brideParents}
             photo={weddingConfig.bride.photo}
             align="right"
           />

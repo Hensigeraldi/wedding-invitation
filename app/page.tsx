@@ -78,7 +78,7 @@ export default function Home() {
         {/* Phase 3: After intro video is finished */}
         {introFinished && (
           <>
-            <Couple />
+            <Couple useAlternateParents={!showGift} />
             <Story />
             <Event />
             <Gallery />

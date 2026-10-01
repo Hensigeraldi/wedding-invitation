@@ -22,12 +22,14 @@ export const weddingConfig = {
     fullName: "Apt. Christian Rondonuwu, S.Farm",
     displayName: "Tian",
     parents: "Putra kedua dari keluarga Rondonuwu - Sandag",
+    parentsAlternate: "Putra kedua dari\nRanny J. Rondonuwu, S.Pd dan Conny M. Sandag",
     photo: "/images/couple/groom.png",
   },
   bride: {
     fullName: "Rodela Agnesia Irot, SKM., M.Kes",
     displayName: "Dela",
     parents: "Putri pertama dari keluarga Irot - Pai",
+    parentsAlternate: "Putri pertama dari\nRobby W. Irot, S.Pd., S.PdK., MM dan Dra. Olha J. Pai",
     photo: "/images/couple/bride.png",
   },
 
